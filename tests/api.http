@@ -1,0 +1,9 @@
+POST http://{{host}}/api/v1/topics
+Accept: application/json
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+ "title": "Example topic"
+}
+###
