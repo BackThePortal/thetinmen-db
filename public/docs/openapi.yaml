@@ -170,15 +170,15 @@ paths:
                 name:
                   type: string
                   description: 'Must not be greater than 70 characters.'
-                  example: xlievjxzmy
+                  example: hwtnibp
                 special:
                   type: boolean
                   description: ''
-                  example: false
+                  example: true
                 description:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: 'Quaerat labore et hic quis velit qui sed.'
+                  example: 'Iure est ut qui deserunt nobis pariatur.'
               required:
                 - name
                 - special
@@ -197,11 +197,11 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Topic] 17'
+                  message: 'No query results for model [App\Models\Topic] 12'
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Topic] 17'
+                    example: 'No query results for model [App\Models\Topic] 12'
       tags:
         - Topics
       security: []
@@ -228,7 +228,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the topic.'
-        example: 17
+        example: 12
         required: true
         schema:
           type: integer
@@ -364,15 +364,15 @@ paths:
                 title:
                   type: string
                   description: 'Must not be greater than 100 characters.'
-                  example: lukrovwcoboiaholthqpy
+                  example: bsjphcstvrfvu
                 link:
                   type: string
                   description: 'Must not be greater than 255 characters.'
-                  example: kqtxjjvm
+                  example: gdwsyfp
                 topic_id:
                   type: string
                   description: ''
-                  example: aut
+                  example: facilis
               required:
                 - title
                 - topic_id
@@ -391,11 +391,11 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Post] 3'
+                  message: 'No query results for model [App\Models\Post] 2'
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Post] 3'
+                    example: 'No query results for model [App\Models\Post] 2'
       tags:
         - Posts
       security: []
@@ -421,7 +421,7 @@ paths:
         in: path
         name: id
         description: 'The ID of the post.'
-        example: 3
+        example: 2
         required: true
         schema:
           type: integer
@@ -439,11 +439,11 @@ paths:
               schema:
                 type: object
                 example:
-                  message: 'No query results for model [App\Models\Post] 3'
+                  message: 'No query results for model [App\Models\Post] 8'
                 properties:
                   message:
                     type: string
-                    example: 'No query results for model [App\Models\Post] 3'
+                    example: 'No query results for model [App\Models\Post] 8'
       tags:
         - Posts
       security: []
@@ -452,7 +452,7 @@ paths:
         in: path
         name: post_id
         description: 'The ID of the post.'
-        example: 3
+        example: 8
         required: true
         schema:
           type: integer
@@ -501,6 +501,56 @@ paths:
                     example: '2024-06-29T18:08:24.000000Z'
       tags:
         - 'Auth management'
+  /api/v1/images:
+    post:
+      summary: 'Store a newly created resource in storage.'
+      operationId: storeANewlyCreatedResourceInStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+  '/api/v1/images/{id}':
+    get:
+      summary: 'Display the specified resource.'
+      operationId: displayTheSpecifiedResource
+      description: ''
+      parameters: []
+      responses:
+        500:
+          description: ''
+          content:
+            application/json:
+              schema:
+                type: object
+                example:
+                  message: 'Server Error'
+                properties:
+                  message:
+                    type: string
+                    example: 'Server Error'
+      tags:
+        - Endpoints
+      security: []
+    delete:
+      summary: 'Remove the specified resource from storage.'
+      operationId: removeTheSpecifiedResourceFromStorage
+      description: ''
+      parameters: []
+      responses: {  }
+      tags:
+        - Endpoints
+      security: []
+    parameters:
+      -
+        in: path
+        name: id
+        description: 'The ID of the image.'
+        example: 7
+        required: true
+        schema:
+          type: integer
 tags:
   -
     name: Topics
@@ -510,6 +560,9 @@ tags:
     description: ''
   -
     name: 'Auth management'
+    description: ''
+  -
+    name: Endpoints
     description: ''
 components:
   securitySchemes:
